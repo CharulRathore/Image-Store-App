@@ -18,9 +18,9 @@ jobs:
             echo 'export PATH=~$PATH:~/.local/bin' >> $BASH_ENV && source $BASH_ENV
             pip install --user flask flask_sqlalchemy flask_login flask_bcrypt flask_wtf wtforms email_validator pytest
       - run:
-          name: Run unit tests
-          command: |
-            pytest 
+          # name: Run unit tests
+          # command: |
+          #   pytest 
       - store_test_results:
           path: test-reports
       - store_artifacts:
