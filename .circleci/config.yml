@@ -1,11 +1,5 @@
 version: 2.1
 
-workflows:
-  build_test:
-    jobs:
-      - run_tests
-
-
 jobs:
   run_tests:
     docker:
@@ -18,10 +12,18 @@ jobs:
             echo 'export PATH=~$PATH:~/.local/bin' >> $BASH_ENV && source $BASH_ENV
             pip install --user flask flask_sqlalchemy flask_login flask_bcrypt flask_wtf wtforms email_validator pytest
       - run:
-          name: Run unit tests
+          name: Run automated tests
           command: |
-            pytest 
+            python test_app.py
+        
       - store_test_results:
           path: test-reports
+
       - store_artifacts:
           path: test-reports
+
+
+workflows:
+  build_test:
+    jobs:
+      - run_tests
