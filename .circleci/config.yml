@@ -1,0 +1,27 @@
+version: 2.0
+
+workflows:
+  build_test:
+    jobs:
+      - run_tests
+
+
+jobs:
+  run_tests:
+    docker:
+      - image: circleci/python:3.12.1
+    steps:
+      - checkout
+      - run:
+          name: Install Python dependencies
+          command: |
+            echo 'export PATH=~$PATH:~/.local/bin' >> $BASH_ENV && source $BASH_ENV
+            pip install --user flask flask_sqlalchemy flask_login flask_bcrypt flask_wtf wtforms email_validator pytest
+      - run:
+          name: Run unit tests
+          command: |
+            pytest 
+      - store_test_results:
+          path: test-reports
+      - store_artifacts:
+          path: test-reports
