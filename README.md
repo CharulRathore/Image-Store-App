@@ -15,14 +15,14 @@ This app has registration, login, and image(or any data) upload features. It is 
 pip install --user flask flask_sqlalchemy flask_login flask_bcrypt flask_wtf wtforms email_validator pytest
 ```
 
-## Execution
+## Execute
 
 ```
 python app.py
 ```
 
 
-## Docker and YML file attached (CircieCI build Successful)
+#### Docker and YML file attached (CircieCI build Successful)
 [Docker Image](https://hub.docker.com/repository/docker/charulsjsu/img-store-app/general)
 
 
