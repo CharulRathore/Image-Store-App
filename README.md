@@ -22,7 +22,7 @@ python app.py
 ```
 
 
-#### Docker and YML file attached (CircieCI build Successful)
+#### Docker and YML file attached (CircleCI build Successful)
 [Docker Image](https://hub.docker.com/repository/docker/charulsjsu/img-store-app/general)
 
 
